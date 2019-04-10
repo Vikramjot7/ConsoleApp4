@@ -20,8 +20,8 @@ namespace ConsoleApp1
         public void Run() { this.ReadTextFiles(); }
         public void ReadTextFiles()
         {
-            //Read file using StreamReader. Reads file line by line
-            using (StreamReader file = new StreamReader(@"U:\Users\726863.STUDENT/beowulf.txt"))
+            
+            using (StreamReader file = new StreamReader(""))
             {
                 int counter = 0;
                 string ln;
@@ -31,7 +31,7 @@ namespace ConsoleApp1
                     counter++;
                 }
                 file.Close();
-                Console.WriteLine($"File has {counter} lines.");
+                Console.WriteLine($"Number of lines are" + counter);
             }
         }
         public int FindNumberOfBlankSpaces(string line)
