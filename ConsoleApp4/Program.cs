@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Collections;
 using System.IO;
 
-namespace ConsoleApp1
+namespace co730457_assignment_4
 {
     class Program
     {
@@ -16,47 +16,48 @@ namespace ConsoleApp1
             Program p = new Program();
             p.Beowulf = new ArrayList();
             p.ReadTextFiles();
-            Console.ReadLine();
+
+
         }
         public void Run() { this.ReadTextFiles(); }
+
         public void ReadTextFiles()
         {
-            //Read file using StreamReader. Reads file line by line
-            using (StreamReader file = new StreamReader(@"U:\U:\Users\726863.STUDENT/beowulf.txt"))
+            using (StreamReader file = new StreamReader("U:/Users/726863.STUDENT/beowulf.txt"))
             {
                 int counter = 0;
-
+                string line;
+                string ln;
                 int number = 0;
 
-                string line;
 
-                while ((line = file.ReadLine()) != null)
-
-                {
-
-                    if (line.Contains("Sea") && line.Contains("Fare") || line.Contains("sea") && line.Contains("fare"))
-
+                while ((ln = file.ReadLine()) != null)
+                    while ((line = file.ReadLine()) != null)
                     {
+                        Console.WriteLine(ln);
+                        Beowulf.Add(ln);
+                        if (line.Contains("Fare") == true && line.Contains("War") == false || line.Contains("Fare") == true && line.Contains("War") == false)
+                        {
+                            {
+                                int x = counter - 1;
 
-                        int x = counter - 1;
+                                number++;
+                            }
+                            counter++;
+                        }
+                        Console.WriteLine($"The number of lines that contains *Fare* without the word *War* are {number}");
 
-                        number++;
 
+
+                        file.Close();
+                        counter = File.ReadLines("").Count();
+                        Console.WriteLine("total number of lines are" + counter);
                     }
-
-                    counter++;
-
-                }
-
-                Console.WriteLine($"The number of lines that contains *Sea* and *Fare* are {number}");
-
-
-
-                file.Close();
             }
         }
     }
 }
+
 
 
 
