@@ -22,7 +22,7 @@ namespace ConsoleApp1
         public void ReadTextFiles()
         {
             //Read file using StreamReader. Reads file line by line
-            using (StreamReader file = new StreamReader(@"U:\Users\726863.STUDENT/beowulf.txt"))
+            using (StreamReader file = new StreamReader(@"U:\U:\Users\726863.STUDENT/beowulf.txt"))
             {
                 int counter = 0;
 
